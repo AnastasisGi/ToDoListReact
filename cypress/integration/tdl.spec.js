@@ -14,4 +14,13 @@ describe("To do list ", function (){
         
     });
 
+    it('can show a todo with a checkbox that you can strikethrough ', () => {
+        cy.visit('/')
+        cy.get('#toDoList-textbox').type("My todo number 1")
+        cy.get('#toDoList-button').click()
+        cy.get("#todos-0-checkbox").click()
+        cy.get("#todos-0").should("have.css", "text-decoration", "line-through solid rgb(0, 0, 0)" )
+
+    });
+
 })
