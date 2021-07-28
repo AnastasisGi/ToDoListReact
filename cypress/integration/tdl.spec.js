@@ -23,4 +23,15 @@ describe("To do list ", function (){
 
     });
 
+
+    it('can clear all the todos with when pressing on a link ', () => {
+        cy.visit('/')
+        cy.get('#toDoList-textbox').type("My todo number 1")
+        cy.get('#toDoList-button').click()
+        cy.get('#toDoList-clear').click()
+        cy.get("#todos-0").should('not.exist')
+       
+
+    });
+
 })

@@ -20,3 +20,13 @@ test('saves and show a todo', () => {
 });
 
 
+test('clears all the todos', () => {
+  render(<ToDoList />);
+  userEvent.type(screen.getByRole('textbox'), "My todo number 1")
+  userEvent.click(screen.getByRole('button'))
+  const todoElement = screen.getByText("My todo number 1");
+  expect(todoElement).toBeInTheDocument();
+  userEvent.click(screen.getByRole('link'))
+  expect(todoElement).not.toBeInTheDocument();
+
+});

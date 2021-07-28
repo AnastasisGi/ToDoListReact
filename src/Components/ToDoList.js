@@ -20,6 +20,11 @@ class ToDoList extends Component {
          
     }
 
+
+    clear = () =>{
+        this.setState({todos:[]})
+    }
+
     render (){
         return(
 
@@ -28,7 +33,8 @@ class ToDoList extends Component {
             
                 <input id="toDoList-textbox" type="text"></input>
               <button id="toDoList-button" onClick={this.addToDo}>Save</button>                
-            
+                <a id="toDoList-clear" href="#" onClick={this.clear}>Clear</a>
+
             {this.state.todos.map((x,index) => <Todo id={index} key={index} text={x} />)}
 
 
