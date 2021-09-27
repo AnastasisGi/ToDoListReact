@@ -7,7 +7,7 @@ Tests are written using the Jest & Cypress framework. To install and run tests:
 
 ```sh
 npm install
-npm run
+npm start
 npm test
 npx cypress open
 ```
